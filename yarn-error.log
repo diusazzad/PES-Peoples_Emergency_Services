@@ -1,0 +1,51 @@
+Arguments: 
+  C:\Program Files\nodejs\node.exe C:\Program Files (x86)\Yarn\bin\yarn.js add @mui/material @mui/styled-engine-sc styled-components
+
+PATH: 
+  C:\Program Files\Common Files\Oracle\Java\javapath;C:\Program Files (x86)\Common Files\Intel\Shared Libraries\redist\intel64\compiler;C:\Python310\Scripts\;C:\Python310\;C:\Python39\Scripts\;C:\Python39\;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\xampp\php;C:\ProgramData\chocolatey\bin;C:\msys64\mingw64\bin;C:\Program Files (x86)\Yarn\bin\;C:\Program Files\Microsoft VS Code\bin;C:\Program Files\nodejs\;C:\Program Files\Git\cmd;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\NVIDIA Corporation\NVIDIA NvDLISR;C:\sqlite;E:\Coding;C:\php-8.2.0;C:\composer;E:\;E:\Coding;C:\ProgramData\ComposerSetup\bin;C:\MinGW\bin;C:\Program Files\CodeBlocks\MinGW\bin;C:\Program Files (x86)\Vim\vim90;C:\src\flutter\bin;C:\Users\SAZZAD HOSSAIN\AppData\Local\Android\Sdk\tools\bin;C:\Users\SAZZAD HOSSAIN\AppData\Local\Android\Sdk\tools\bin;C:\Users\SAZZAD HOSSAIN\AppData\Local\Android\Sdk\tools;C:\Users\SAZZAD HOSSAIN\AppData\Local\Android\Sdk\platform-tools;C:\Program Files\Java\jdk-20\bin;C:\Program Files\Java\jdk-20;C:\Program Files\Common Files\Oracle\Java\javapath;C:\android\Sdk;C:\Program Files (x86)\Common Files\Intel\Shared Libraries\redist\intel64\compiler;C:\Python310\Scripts\;C:\Python310\;C:\Python39\Scripts\;C:\Python39\;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\xampp\php;C:\ProgramData\chocolatey\bin;C:\msys64\mingw64\bin;C:\Program Files (x86)\Yarn\bin\;C:\Program Files\Microsoft VS Code\bin;C:\Program Files\nodejs\;C:\Program Files\Git\cmd;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\NVIDIA Corporation\NVIDIA NvDLISR;C:\sqlite;E:\Coding;C:\php-8.2.0;C:\composer;E:\;E:\Coding;C:\ProgramData\ComposerSetup\bin;C:\MinGW\bin;C:\Program Files\CodeBlocks\MinGW\bin;C:\Program Files (x86)\Vim\vim90;C:\Users\SAZZAD HOSSAIN\AppData\Local\Microsoft\WindowsApps;C:\Users\SAZZAD HOSSAIN\AppData\Roaming\Composer\vendor\bin;%PhpStorm%;C:\Users\SAZZAD HOSSAIN\AppData\Local\GitHubDesktop\bin;H:\Github;C:\Users\SAZZAD HOSSAIN\AppData\Local\Yarn\bin;C:\Users\SAZZAD HOSSAIN\AppDa;C:\Users\SAZZAD HOSSAIN\AppData\Local\JetBrains\Toolbox\scripts;C:\Program Files\Java\jdk-1.8;C:\Users\SAZZAD HOSSAIN\AppData\Local\Android\Sdk\tools\bin;C:\Users\SAZZAD HOSSAIN\AppData\Local\Android\Sdk\tools;C:\Users\SAZZAD HOSSAIN\AppData\Local\Android\Sdk\platform-tools;C:\src\flutter\bin;
+
+Yarn version: 
+  1.22.15
+
+Node version: 
+  16.13.0
+
+Platform: 
+  win32 x64
+
+Trace: 
+  Error: EPERM: operation not permitted, unlink 'C:\xampp\htdocs\testa\node_modules\@esbuild\win32-x64\esbuild.exe'
+
+npm manifest: 
+  {
+      "private": true,
+      "type": "module",
+      "scripts": {
+          "dev": "vite",
+          "build": "vite build"
+      },
+      "devDependencies": {
+          "@popperjs/core": "^2.11.6",
+          "autoprefixer": "^10.4.14",
+          "axios": "^1.1.2",
+          "bootstrap": "^5.2.3",
+          "laravel-vite-plugin": "^0.7.5",
+          "postcss": "^8.4.23",
+          "sass": "^1.56.1",
+          "tailwindcss": "^3.3.2",
+          "vite": "^4.0.0"
+      },
+      "dependencies": {
+          "@emotion/react": "^11.11.0",
+          "@emotion/styled": "^11.11.0",
+          "@material/web": "^1.0.0-pre.9",
+          "@mui/icons-material": "^5.11.16",
+          "@mui/material": "^5.13.3"
+      }
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile

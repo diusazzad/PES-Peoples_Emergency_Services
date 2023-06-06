@@ -1,0 +1,73 @@
+-- CREATE TABLE users (
+--     id BIGINT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+--     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+--     updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+-- );
+
+-- CREATE TABLE user_full_infos (
+--     id BIGINT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+--     user_id BIGINT UNSIGNED,
+--     usernid BIGINT,
+--     userphoto LONGBLOB,
+--     is_available BOOLEAN,
+--     fullname CHAR(100),
+--     account_created_at DATETIME,
+--     last_login DATETIME,
+--     created_at DATE,
+--     weight DECIMAL(3, 2),
+--     gender ENUM('male', 'female', 'third'),
+--     float_column FLOAT(8, 2),
+--     user_last_position GEOMETRY,
+--     geometry_column GEOMETRY,
+--     integer_column INT,
+--     ip_address_column VARCHAR(45),
+--     json_column JSON,
+--     FOREIGN KEY (user_id) REFERENCES users(id)
+-- );
+
+-- CREATE TABLE user_locations (
+--     id BIGINT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+--     user_full_info_id BIGINT UNSIGNED,
+--     user_last_position POINT,
+--     linestring_column LINESTRING,
+--     polygon_column POLYGON,
+--     polygon_with_hole_column POLYGON,
+--     collection_column GEOMETRYCOLLECTION,
+--     FOREIGN KEY (user_full_info_id) REFERENCES user_full_infos(id)
+-- );
+
+-- CREATE TABLE user_device_information (
+--     id BIGINT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+--     user_full_info_id BIGINT UNSIGNED,
+--     ip_address VARCHAR(45),
+--     user_region VARCHAR(255),
+--     mobile_carrier VARCHAR(255),
+--     device_model VARCHAR(255),
+--     network_type VARCHAR(255),
+--     screen_resolution VARCHAR(255),
+--     operating_system VARCHAR(255),
+--     app_name VARCHAR(255),
+--     file_type VARCHAR(255),
+--     keystroke_pattern TEXT,
+--     audio_settings VARCHAR(255),
+--     connected_audio_device VARCHAR(255),
+--     login_location VARCHAR(255),
+--     FOREIGN KEY (user_full_info_id) REFERENCES user_full_infos(id)
+-- );
+
+-- CREATE TABLE user_daily_tasks (
+--     id BIGINT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+--     user_full_info_id BIGINT UNSIGNED,
+--     title VARCHAR(255),
+--     description TEXT,
+--     completed BOOLEAN DEFAULT 0,
+--     FOREIGN KEY (user_full_info_id) REFERENCES user_full_infos(id)
+-- );
+
+-- CREATE TABLE user_communities (
+--     id BIGINT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+--     user_full_info_id BIGINT UNSIGNED,
+--     social_name VARCHAR(255),
+--     description TEXT,
+--     FOREIGN KEY (user_full_info_id) REFERENCES user_full_infos(id)
+-- );

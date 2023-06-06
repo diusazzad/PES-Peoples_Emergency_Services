@@ -1,0 +1,10 @@
+@import url('https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet');
+
+
+.material-symbols-outlined {
+    font-family: 'Material Icons Outlined';
+}
+
+.rotate-45 {
+    transform: rotate(45deg);
+  }

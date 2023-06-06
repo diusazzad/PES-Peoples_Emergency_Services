@@ -1,0 +1,25 @@
+<div class="flex h-screen">
+    <div id="mySidenav" class="bg-black w-0 sm:w-64 fixed z-50 top-0 left-0 overflow-x-hidden transition-all duration-500">
+      <a href="javascript:void(0)" class="text-gray-400 absolute top-0 right-4 text-3xl mt-4" onclick="closeNav()">&times;</a>
+      <a href="#" class="text-gray-400 block py-2 px-4 text-lg transition-colors duration-300 hover:text-white">About</a>
+      <a href="#" class="text-gray-400 block py-2 px-4 text-lg transition-colors duration-300 hover:text-white">Services</a>
+      <a href="#" class="text-gray-400 block py-2 px-4 text-lg transition-colors duration-300 hover:text-white">Clients</a>
+      <a href="#" class="text-gray-400 block py-2 px-4 text-lg transition-colors duration-300 hover:text-white">Contact</a>
+    </div>
+    <div id="main" class="transition-all duration-500 flex-1 p-4">
+      <h2 class="text-2xl font-bold">Sidenav Push Example</h2>
+      <p>Click on the element below to open the side navigation menu and push this content to the right.</p>
+      <span class="text-3xl cursor-pointer" onclick="openNav()">&#9776; open</span>
+    </div>
+  </div>
+  <script>
+  function openNav() {
+    document.getElementById("mySidenav").style.width = "250px";
+    document.getElementById("main").style.marginLeft = "250px";
+  }
+
+  function closeNav() {
+    document.getElementById("mySidenav").style.width = "0";
+    document.getElementById("main").style.marginLeft = "0";
+  }
+  </script>
