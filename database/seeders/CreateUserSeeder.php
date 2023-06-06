@@ -17,19 +17,19 @@ class CreateUserSeeder extends Seeder
             [
                'name'=>'User',
                'email'=>'user@gmail.com',
-               'role'=> 1,
+               'role'=> 0,
                'password'=> bcrypt('11112222'),
             ],
             [
                'name'=>'Editor',
                'email'=>'editor@gmail.com',
-               'role'=> 2,
+               'role'=> 1,
                'password'=> bcrypt('22223333'),
             ],
             [
                'name'=>'Admin',
                'email'=>'admin@gmail.com',
-               'role'=> 3,
+               'role'=> 2,
                'password'=> bcrypt('33334444'),
             ],
 
