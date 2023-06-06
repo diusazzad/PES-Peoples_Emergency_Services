@@ -1,4 +1,3 @@
-
 @extends('layouts.page')
 
 
@@ -11,7 +10,8 @@
         <div class="container mx-auto">
             <div class="flex justify-between items-center py-4">
                 <a href="#" class="text-white flex items-center">
-                    <i class="material-icons text-white">home</i> Home
+                    {{-- <i class="material-icons text-white">home</i> Home --}}
+                    <x-logo></x-logo>
                 </a>
 
                 <!-- Menu Icon -->
@@ -103,55 +103,51 @@
     <div class="accordion flex flex-row border p-3 ">
         <div class="basis-1/2 border">
             <h1 class="">FAQ</h1>
-            <p class="">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi cupiditate sapiente sed
-                aut
-                rerum! Nulla
-                necessitatibus amet dicta deserunt, quasi eveniet consectetur voluptatibus tempora, quibusdam illum
-                repellendus aut, beatae quo.</p>
-            <img class="" src="{{ asset('storage/content/images/1_1685501548.jpg') }}" alt="Image">
+            <p class="">The idea is to build a Platform where every people in our country have strong security
+                anywhere any place, has better communication, a great mentality, and a matrix-free world where people
+                can aware of every situation that happened and have an independent platform for themselves.
+
+                If anyone works with this project and the vision, together we can develop a matrix-free world.</p>
+            <img class="" src="{{ asset('welcome/image/1.jpg') }}" alt="Image">
+            <img class="" src="{{ asset('welcome/image/2.jpg') }}" alt="Image">
+            <img class="" src="{{ asset('welcome/image/3.jpg') }}" alt="Image">
         </div>
         <div class="container mx-auto border ">
             <h2 class="text-2xl font-bold mb-4">People's Emergency Service</h2>
 
             <button
                 class="accordion bg-gray-200 text-gray-700 hover:bg-gray-300 transition-colors duration-300 ease-in-out focus:outline-none py-3 px-6 w-full text-left">
-                Section 1
+                People's Emergency Services
             </button>
             <div class="panel bg-white p-6 mt-2">
                 <p class="text-gray-700">
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
-                    labore
-                    et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi
-                    ut
-                    aliquip ex ea commodo consequat.
+                   The idea is to people need emergency help when they needed. nowadays people
+                   have the quick response if they need nearest person or nearest area for having anyon's help
+                   or they can connect 999 services.
                 </p>
             </div>
 
             <button
                 class="accordion bg-gray-200 text-gray-700 hover:bg-gray-300 transition-colors duration-300 ease-in-out focus:outline-none py-3 px-6 w-full text-left">
-                Section 2
+                Mental Health
             </button>
             <div class="panel bg-white p-6 mt-2">
                 <p class="text-gray-700">
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
-                    labore
-                    et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi
-                    ut
-                    aliquip ex ea commodo consequat.
+                    We live in a world where rat race and mental deppression are building and
+                    it keep us weak. So , a user can now build their presonal habit and can have
+                    a free vision of themselves
                 </p>
             </div>
 
             <button
                 class="accordion bg-gray-200 text-gray-700 hover:bg-gray-300 transition-colors duration-300 ease-in-out focus:outline-none py-3 px-6 w-full text-left">
-                Section 3
+                Freedom Of Speech
             </button>
             <div class="panel bg-white p-6 mt-2">
                 <p class="text-gray-700">
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
-                    labore
-                    et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi
-                    ut
-                    aliquip ex ea commodo consequat.
+                    Freedom of speech is the most precious way to judge a person's
+                    charecter and free to judge what he/she thinks . So the perpose of this
+                    project leads you a better connective community.
                 </p>
             </div>
         </div>
