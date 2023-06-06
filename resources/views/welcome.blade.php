@@ -77,9 +77,12 @@
 
     <!-- Top Headers -->
     <header class="">
-        <div class="container mx-auto py-4">
-            <h1 class="text-center">Welcome to People's Emergency Services - PES</h1>
+
+        <div class="container mx-auto py-4  " id="topHeader">
+            <h1 class="text-center">Welcome to</h1>
+            <h1> People's Emergency Services - PES</h1>
         </div>
+
         <div class="m-1 border rounded p-1">
             <button id="myBtn"
                 class="bg-blue-500 align-middle hover:bg-blue-700 text-white w-fit font-bold py-2 px-4 rounded">

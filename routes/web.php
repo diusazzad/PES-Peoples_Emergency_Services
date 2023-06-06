@@ -21,7 +21,7 @@ use App\Http\Controllers\UserController;
 
 Route::get('/', [ContentController::class, 'index']);
 
-Auth::routes();
+
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
@@ -49,18 +49,8 @@ Route::get('/userdashboard', [pageControllerRoutes::class,'user']);
 
 
 // ===============================Role
-
-// Route::group(['middleware' => 'role:1', 'prefix' => 'admin', 'as' => 'admin.'], function () {
-//     // Routes accessible to admin role
-//     Route::get('/dashboard', 'AdminController@index')->name('dashboard');
-//     // Add more admin routes here
-// });
-
-// Route::group(['middleware' => 'role:2', 'prefix' => 'user', 'as' => 'user.'], function () {
-//     // Routes accessible to user role
-//     Route::get('/dashboard', 'UserController@index')->name('dashboard');
-//     // Add more user routes here
-// });
+Auth::routes();
+// Route User
 Route::middleware(['auth','user-role:user'])->group(function()
 {
     Route::get("/home",[HomeController::class, 'userHome'])->name("home");
@@ -74,4 +64,4 @@ Route::middleware(['auth','user-role:editor'])->group(function()
 Route::middleware(['auth','user-role:admin'])->group(function()
 {
     Route::get("/admin/home",[HomeController::class, 'adminHome'])->name("admin.home");
-});;
+});

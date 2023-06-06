@@ -89,7 +89,7 @@ class User extends Authenticatable
             get: fn ($value) =>  ["user", "editor", "admin"][$value],
         );
     }
-
-
-
 }
+
+
+
