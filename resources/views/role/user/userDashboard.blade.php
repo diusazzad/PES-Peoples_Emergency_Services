@@ -53,15 +53,18 @@
                 </nav>
             </div>
             <div class="main border border-black m-2 p-2 rounded h-full" id="mainContent">
-                <div class="border m-1 p-2 rounded flex flex-row gap-x-20 h-20">
-                    <h1>Tasks</h1>
-                    <h2>94</h2>
-                    <h2>23</h2>
+                <div class="border-2 border-rose-500">
+                    <div class="border m-1 p-2 rounded flex flex-row gap-x-20 h-20">
+                        <h1>Tasks</h1>
+                        <h2>94</h2>
+                        <h2>23</h2>
+                    </div>
+                    <div class="m-1 p-2 border rounded flex flex-row  gap-x-20 h-20">
+                        <h1>in total</h1>
+                        <h2>done,</h2>
+                    </div>
                 </div>
-                <div class="m-1 p-2 border rounded flex flex-row  gap-x-20 h-20">
-                    <h1>in total</h1>
-                    <h2>done,</h2>
-                </div>
+
             </div>
         </div>
     </div>
