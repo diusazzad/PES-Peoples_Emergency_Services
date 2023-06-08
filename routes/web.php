@@ -3,6 +3,7 @@
 use App\Http\Controllers\ContentController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\pageControllerRoutes;
+use App\Http\Controllers\UserTaskController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminController;
@@ -22,6 +23,12 @@ use App\Http\Controllers\UserController;
 Route::get('/', [ContentController::class, 'index']);
 
 
+// fallback routes
+Route::fallback(function () {
+   return 'error routes';
+});
+
+
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
@@ -36,7 +43,9 @@ Route::post('/upload', [ContentController::class,'store']);
 
 
 
-//
+
+
+
 // ==============================
 Route::group(['as'=>'admin.','prefix' => 'admin','namespace'=>'Admin','middleware'=>['auth','admin']], function () {
     Route::get('dashboard', 'DashboardController@index')->name('dashboard');
@@ -54,6 +63,13 @@ Auth::routes();
 Route::middleware(['auth','user-role:user'])->group(function()
 {
     Route::get("/home",[HomeController::class, 'userHome'])->name("home");
+    // USER TASKS ROUTES
+    Route::resource('/home/tasks', UserTaskController::class);
+    Route::get('/home/tasks-all', [UserTaskController::class, 'index']);
+    Route::get('/home/tasks-complete', [UserTaskController::class, 'index_complete']);
+    Route::get('/home/tasks-incomplete', [UserTaskController::class, 'index_incomplete']);
+
+
 });
 // Route Editor
 Route::middleware(['auth','user-role:editor'])->group(function()
@@ -65,3 +81,6 @@ Route::middleware(['auth','user-role:admin'])->group(function()
 {
     Route::get("/admin/home",[HomeController::class, 'adminHome'])->name("admin.home");
 });
+
+
+

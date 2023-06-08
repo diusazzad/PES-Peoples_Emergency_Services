@@ -37,7 +37,7 @@ class HomeController extends Controller
     public function userHome()
     {
         // return view('home',["msg"=>"Hello! I am user"]);
-        return view('role.userDashboard');
+        return view('role.user.userDashboard');
     }
     public function editorHome()
     {
@@ -46,6 +46,6 @@ class HomeController extends Controller
     public function adminHome()
     {
         // return view('home',["msg"=>"Hello! I am admin"]);
-        return view('role.adminDashboard');
+        return view('role.admin.adminDashboard');
     }
 }

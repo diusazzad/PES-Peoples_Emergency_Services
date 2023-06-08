@@ -18,8 +18,13 @@ return new class extends Migration
             $table->text('description');
             $table->boolean('completed')->default(false);
             $table->timestamps();
-
             $table->foreign('user_full_info_id')->references('id')->on('user_full_infos');
+
+
+            
+            $table->unsignedBigInteger('user_id');
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+            $table->string('name');
         });
     }
 
