@@ -13,7 +13,7 @@ class ContentController extends Controller
 
     }
 
-    public function index()
+    public function welcome()
     {
         $contents = Content::all();
         return view('welcome', compact('contents'));
