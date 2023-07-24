@@ -1,6 +1,36 @@
-# PES - People's Emergency Service - Pes 
-The idea is to build a Platform where every people in our country have strong security anywhere any place, has better communication, a great mentality, and a matrix-free world where people can aware of every situation that happened and have an independent platform for themselves.
 
-If anyone works with this project and the vision, together we can develop a matrix-free world. 
-Join This Link - https://chat.whatsapp.com/JMq1xZlQwkm9ZbavVBpW0b
-Let's Build Something for the People and Get Out of The Matrix.
+# PES - People's Emergency Services
+
+An idea that can change your life and time.
+
+
+
+
+
+## Documentation
+
+[Documentation](https://linktodocumentation)
+
+The idea is to a person's daily work will connected on the same application where person can use only one application with multiple feature's like helpdesk,community,task management, fitness,transaction,blog and many more.
+
+## Features
+
+- Api intregration
+- web/android Features
+- Responsive
+- Cross platform
+- Multiple Database with backup
+- Role Based Authentication 
+- Community Page
+- Task Management
+- Helpdesk
+- 
+
+
+
+## Lessons Learned
+
+We need to setup cross development for this project for accessing the full feature of this project.
+From api to interface each task is will help you to gain the development stronger.
+
+
