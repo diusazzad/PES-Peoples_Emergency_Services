@@ -10,7 +10,7 @@ class ContentController extends Controller
 
     public function welcome()
     {
-        return view('welcome');
+        return view('app');
     }
 
 

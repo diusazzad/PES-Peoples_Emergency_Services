@@ -14,7 +14,7 @@ An idea that can change your life and time.
 The idea is to a person's daily work will connected on the same application where person can use only one application with multiple feature's like helpdesk,community,task management, fitness,transaction,blog and many more.
 
 ## Features
-
+- 
 - Api intregration
 - web/android Features
 - Responsive

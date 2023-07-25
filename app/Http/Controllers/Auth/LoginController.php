@@ -53,26 +53,21 @@ class LoginController extends Controller
             'password' => 'required',
         ]);
 
-        if(auth()->attempt(array('email' => $input['email'], 'password' => $input['password'])))
-        {
-            if (auth()->user()->role == 'admin')
-            {
-              return redirect()->route('admin.home');
+        $remember = $request->has('remember'); // Check if the "Remember Me" checkbox is checked
+
+        if (Auth::attempt(['email' => $input['email'], 'password' => $input['password']], $remember)) {
+            if (auth()->user()->role == 'superadmin') {
+                return redirect()->route('superadmin.home');
+            }else if (auth()->user()->role == 'admin') {
+                return redirect()->route('admin.home');
+            } else if (auth()->user()->role == 'editor') {
+                return redirect()->route('editor.home');
+            } else {
+                return redirect()->route('home');
             }
-            else if (auth()->user()->role == 'editor')
-            {
-              return redirect()->route('editor.home');
-            }
-            else
-            {
-              return redirect()->route('home');
-            }
-        }
-        else
-        {
-            return redirect()
-            ->route('login')
-            ->with('error','Incorrect email or password!.');
+        } else {
+            return redirect()->route('login')->with('error', 'Incorrect email or password!.');
         }
     }
+
 }

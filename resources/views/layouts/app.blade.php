@@ -21,10 +21,13 @@
     <style>
         /* Add any custom styles here */
     </style>
+    @vite('resources/js/app.js')
+    {{-- @inertiaHead --}}
 </head>
 
 <body>
     <div class="">
+        {{-- @inertia --}}
         @yield('content')
     </div>
 </body>

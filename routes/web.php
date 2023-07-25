@@ -1,13 +1,11 @@
 <?php
 
+use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\ContentController;
 use App\Http\Controllers\HomeController;
-use App\Http\Controllers\pageControllerRoutes;
-use App\Http\Controllers\UserTaskController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\AdminController;
-use App\Http\Controllers\UserController;
+use Inertia\Inertia;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,6 +18,18 @@ use App\Http\Controllers\UserController;
 |
 */
 
-Route::get('/', [ContentController::class, 'welcome'])->name('welcome');
+Route::get('/', [ContentController::class, 'welcome'])->name('home');
 
 
+Route::get('/register', function () {
+    return Inertia::render('RegistrationPage', [
+        'user' => Auth::user(), // Provide any data you need for the registration page
+    ]);
+});
+
+Route::get('/', function () {
+    return \Inertia\Inertia::render('Home');
+});
+
+Route::get('/register', [RegisterController::class,'showRegistrationForm'])->name('register');
+Route::post('/register', [RegisterController::class, 'register']);
