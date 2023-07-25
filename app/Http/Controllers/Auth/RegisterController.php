@@ -54,11 +54,27 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
-        return User::create([
+        // Validate the role to make sure it's one of the allowed roles
+        $allowedRoles = ['user', 'superadmin', 'admin', 'editor'];
+        if (!in_array($data['role'], $allowedRoles)) {
+            throw new \Exception('Invalid role selected during registration');
+        }
+
+        // Create the user with the provided data
+        $user = User::create([
             'name' => $data['name'],
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
-            'role' => 'user', // Set a default role, change 'user' to your desired default role
+            'role' => $data['role'],
         ]);
+
+        // Generate a token for 'superadmin', 'admin', and 'editor'
+        if (in_array($data['role'], ['superadmin', 'admin', 'editor'])) {
+            $token = $user->createToken($data['role'] . '_token')->plainTextToken;
+        }
+
+        // Add any other logic you want to perform after registration
+
+        return $user;
     }
 }

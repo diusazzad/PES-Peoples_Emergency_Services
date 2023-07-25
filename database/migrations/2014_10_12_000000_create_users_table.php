@@ -15,11 +15,9 @@ return new class extends Migration {
             $table->string('name');
             $table->string('email')->unique();
             $table->string('password');
-            $table->enum('role', ['user', 'superadmin', 'admin', 'editor'])->default('user');
+            $table->enum('role', ['superadmin', 'admin', 'editor', 'user'])->default('user');
+            $table->rememberToken();
             $table->timestamps();
-            $table->string('superadmin_token')->nullable(); // Token for 'superadmin'
-            $table->string('admin_token')->nullable(); // Token for 'admin'
-            $table->string('editor_token')->nullable(); // Token for 'editor'
         });
     }
 

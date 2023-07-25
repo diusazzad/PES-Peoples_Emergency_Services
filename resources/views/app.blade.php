@@ -10,7 +10,7 @@
             <ul class="hidden sm:flex md:space-x-4 lg:space-x-4 xl:space-x-4 2xl:space-x-4" id="navigationLinks">
                 <li><a href="#" class="text-white hover:underline">Home</a></li>
                 <li><a href="#" class="text-white hover:underline">Login</a></li>
-                <li><a href="#" class="text-white hover:underline">Signup</a></li>
+                <li><a href="{{ route('register') }}" class="text-white hover:underline">Signup</a></li>
                 <li><a href="#" class="text-white hover:underline">Contact</a></li>
             </ul>
             <button class="sm:hidden text-white focus:outline-none" onclick="toggleNavigation()">

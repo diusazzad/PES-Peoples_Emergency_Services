@@ -14,7 +14,10 @@ An idea that can change your life and time.
 The idea is to a person's daily work will connected on the same application where person can use only one application with multiple feature's like helpdesk,community,task management, fitness,transaction,blog and many more.
 
 ## Features
-- 
+
+- Cookie-based authentication for regular users:
+- Token-based authentication for superadmin:
+- JWT (JSON Web Token) for admin and editor roles:
 - Api intregration
 - web/android Features
 - Responsive
@@ -28,9 +31,12 @@ The idea is to a person's daily work will connected on the same application wher
 
 
 
-## Lessons Learned
+## Lessons 
 
-We need to setup cross development for this project for accessing the full feature of this project.
-From api to interface each task is will help you to gain the development stronger.
+In summary, you will have three different authentication methods:
+
+Cookie-based authentication for regular users.
+custom Token-based authentication for the superadmin role.
+JWT authentication for the admin and editor roles.
 
 

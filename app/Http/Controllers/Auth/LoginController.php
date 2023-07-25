@@ -13,37 +13,36 @@ use Illuminate\Http\Request;
 
 class LoginController extends Controller
 {
-    /*
-    |--------------------------------------------------------------------------
-    | Login Controller
-    |--------------------------------------------------------------------------
-    |
-    | This controller handles authenticating users for the application and
-    | redirecting them to your home screen. The controller uses a trait
-    | to conveniently provide its functionality to your applications.
-    |
-    */
-
     use AuthenticatesUsers;
 
-    /**
-     * Where to redirect users after login.
-     *
-     * @var string
-     */
     protected $redirectTo = RouteServiceProvider::HOME;
 
-
-    /**
-     * Create a new controller instance.
-     *
-     * @return void
-     */
     public function __construct()
     {
         $this->middleware('guest')->except('logout');
     }
 
+    // The path to redirect users after login based on their roles
+    protected function redirectTo()
+    {
+        if (auth()->user()->role == 'superadmin') {
+            return route('superadmin.home');
+        } elseif (auth()->user()->role == 'admin') {
+            return route('admin.home');
+        } elseif (auth()->user()->role == 'editor') {
+            return route('editor.home');
+        } else {
+            return route('home');
+        }
+    }
+
+    // Show the regular login form
+    public function showLoginForm()
+    {
+        return view('auth.login');
+    }
+
+    // Handle login for regular users
     public function login(Request $request)
     {
         $input = $request->all();
@@ -58,16 +57,31 @@ class LoginController extends Controller
         if (Auth::attempt(['email' => $input['email'], 'password' => $input['password']], $remember)) {
             if (auth()->user()->role == 'superadmin') {
                 return redirect()->route('superadmin.home');
-            }else if (auth()->user()->role == 'admin') {
+            } elseif (auth()->user()->role == 'admin') {
                 return redirect()->route('admin.home');
-            } else if (auth()->user()->role == 'editor') {
+            } elseif (auth()->user()->role == 'editor') {
                 return redirect()->route('editor.home');
             } else {
                 return redirect()->route('home');
             }
         } else {
-            return redirect()->route('login')->with('error', 'Incorrect email or password!.');
+            return redirect()->route('login')->with('error', 'Incorrect email or password!');
         }
     }
+
+    // Show the login form for superadmin
+    public function showAdminLoginForm()
+    {
+        return view('auth.admin-login');
+    }
+
+    // Handle login for superadmin
+    public function adminLogin(Request $request)
+    {
+        // Your login logic here for superadmin
+        // Use $request->input('email') and $request->input('password') for credentials
+    }
+
+    // Similar methods for admin and editor login
 
 }

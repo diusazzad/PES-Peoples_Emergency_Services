@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\Auth\AuthController;
+use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\ContentController;
 use App\Http\Controllers\HomeController;
@@ -18,18 +20,31 @@ use Inertia\Inertia;
 |
 */
 
+
+
+
+// Route::get('/register', function () {
+//     return Inertia::render('RegistrationPage', [
+//         'user' => Auth::user(), // Provide any data you need for the registration page
+//     ]);
+// });
+
+// Route::get('/', function () {
+//     return \Inertia\Inertia::render('Home');
+// });
+
+
 Route::get('/', [ContentController::class, 'welcome'])->name('home');
 
+Route::get('/register', [AuthController::class, 'showRegistrationForm'])->name('register');
+Route::post('/register', [AuthController::class, 'register']);
 
-Route::get('/register', function () {
-    return Inertia::render('RegistrationPage', [
-        'user' => Auth::user(), // Provide any data you need for the registration page
-    ]);
+
+Route::get('/login', [AuthController::class, 'showLoginForm'])->name('login');
+Route::post('/login', [AuthController::class, 'login']);
+Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
+
+
+Route::middleware('auth')->group(function () {
+    // Define your protected routes here.
 });
-
-Route::get('/', function () {
-    return \Inertia\Inertia::render('Home');
-});
-
-Route::get('/register', [RegisterController::class,'showRegistrationForm'])->name('register');
-Route::post('/register', [RegisterController::class, 'register']);
