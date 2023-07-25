@@ -9,28 +9,10 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Validator;
+use Tymon\JWTAuth\Facades\JWTAuth;
 
 class AuthController extends Controller
 {
-    public function login(Request $request)
-    {
-        $credentials = $request->only('email', 'password');
-
-        if (Auth::attempt($credentials)) {
-            // Authentication successful, create access token and return a response
-            $user = Auth::user();
-            $token = $user->createToken('authToken')->accessToken;
-
-            return response()->json(['user' => $user, 'access_token' => $token], 200);
-        } else {
-            // Authentication failed, return an error response
-            return response()->json(['error' => 'Unauthorized'], 401);
-        }
-    }
-
-
-
-
     public function register(Request $request)
     {
         Log::info('Registration API requested');
@@ -58,5 +40,35 @@ class AuthController extends Controller
 
         Log::info('Registration successful');
         return response()->json(['user' => $user, 'access_token' => $token], 201);
+    }
+
+
+
+    public function login(Request $request)
+    {
+        $credentials = $request->only('email', 'password');
+
+        if (!$token = JWTAuth::attempt($credentials)) {
+            return response()->json(['error' => 'Unauthorized'], 401);
+        }
+
+        return response()->json(compact('token'));
+    }
+
+    public function logout()
+    {
+        JWTAuth::invalidate();
+
+        return response()->json(['message' => 'Successfully logged out']);
+    }
+
+    public function refresh()
+    {
+        return response()->json(['token' => JWTAuth::refresh()]);
+    }
+
+    public function me()
+    {
+        return response()->json(['user' => Auth::user()]);
     }
 }

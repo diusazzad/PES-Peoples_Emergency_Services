@@ -2,15 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Foundation\Auth\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\Hash;
-use Illuminate\Support\Str;
 
-class UserController extends Controller
+class AdminController extends Controller
 {
-
     public function dashboard()
     {
         // Get the authenticated user
@@ -22,9 +18,7 @@ class UserController extends Controller
             // Add other data here
         ];
 
-        // Assuming you have a 'user.dashboard' view for the user dashboard
-        return view('user.dashboard', $data);
+        // Assuming you have an 'admin.dashboard' view for the admin dashboard
+        return view('admin.dashboard', $data);
     }
-
-
 }

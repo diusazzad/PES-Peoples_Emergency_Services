@@ -35,8 +35,14 @@ The idea is to a person's daily work will connected on the same application wher
 
 In summary, you will have three different authentication methods:
 
-Cookie-based authentication for regular users.
-custom Token-based authentication for the superadmin role.
-JWT authentication for the admin and editor roles.
+Cookie-based authentication for regular users. ✔️
+custom Token-based authentication for the superadmin role.❌
+JWT authentication for the admin and editor roles.❌
 
-
+## Custom Commands
+php artisan make:command Prime
+ open the app/Console/Kernel.php file and add the following line inside the commands array:
+ protected $commands = [
+    \App\Console\Commands\Prime::class,
+];
+  Run the custom command  php artisan prime

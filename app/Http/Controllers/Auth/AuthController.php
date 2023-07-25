@@ -42,17 +42,25 @@ class AuthController extends Controller
 
     public function login(Request $request)
     {
-        $request->validate([
-            'email' => 'required|email',
-            'password' => 'required',
-        ]);
+        $credentials = $request->only('email', 'password');
+        $remember = $request->has('remember'); // Check if "Remember Me" checkbox is checked
 
-        $remember = $request->has('remember');
+        if (Auth::attempt($credentials, $remember)) {
+            $user = Auth::user(); // Get the authenticated user
 
-        if (Auth::attempt(['email' => $request->email, 'password' => $request->password], $remember)) {
-            return redirect()->intended('/'); // Redirect to the intended page after successful login.
+            // Check the role of the user and redirect accordingly
+            if ($user->role == 'user') {
+                return redirect()->route('user.dashboard');
+            } elseif ($user->role == 'admin') {
+                return redirect()->route('admin.dashboard');
+            } elseif ($user->role == 'editor') {
+                return redirect()->route('editor.dashboard');
+            } else {
+                // Handle other roles or default redirection here
+                return redirect()->intended('/'); // Redirect to the intended page after successful login.
+            }
         } else {
-            return redirect()->route('login')->with('error', 'Incorrect email or password!.');
+            return redirect()->route('login')->with('error', 'Incorrect email or password!');
         }
     }
 

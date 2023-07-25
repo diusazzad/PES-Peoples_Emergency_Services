@@ -30,13 +30,26 @@ class RedirectIfAuthenticated
 
     public function handle($request, Closure $next, $guard = null)
     {
-        if (Auth::guard($guard)->check() && Auth::user()->role_id == 1) {
-            return redirect()->route('role.adminDashboard');
-        } elseif(Auth::guard($guard)->check() && Auth::user()->role_id == 2){
-            return redirect()->route('role.userDashboard');
-        } else {
-            return $next($request);
+        if (Auth::guard($guard)->check()) {
+            // Check the role of the authenticated user and redirect accordingly
+            $userRole = Auth::user()->role;
+
+            if ($userRole === 'admin') {
+                return redirect()->route('admin.dashboard');
+            } elseif ($userRole === 'user') {
+                return redirect()->route('user.dashboard');
+            } elseif ($userRole === 'editor') {
+                return redirect()->route('editor.dashboard');
+            } elseif ($userRole === 'superadmin') {
+                return redirect()->route('superadmin.dashboard');
+            }
+
+            // If the user has no specific role or the role is not defined above,
+            // redirect to the default home route (change 'home' to your desired route).
+            return redirect()->route('login');
         }
+
+        return $next($request);
     }
 
 }
