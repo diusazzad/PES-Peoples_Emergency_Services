@@ -44,31 +44,31 @@ class AuthController extends Controller
 
 
 
-    public function login(Request $request)
-    {
-        $credentials = $request->only('email', 'password');
+    // public function login(Request $request)
+    // {
+    //     $credentials = $request->only('email', 'password');
 
-        if (!$token = JWTAuth::attempt($credentials)) {
-            return response()->json(['error' => 'Unauthorized'], 401);
-        }
+    //     if (!$token = JWTAuth::attempt($credentials)) {
+    //         return response()->json(['error' => 'Unauthorized'], 401);
+    //     }
 
-        return response()->json(compact('token'));
-    }
+    //     return response()->json(compact('token'));
+    // }
 
-    public function logout()
-    {
-        JWTAuth::invalidate();
+    // public function logout()
+    // {
+    //     JWTAuth::invalidate();
 
-        return response()->json(['message' => 'Successfully logged out']);
-    }
+    //     return response()->json(['message' => 'Successfully logged out']);
+    // }
 
-    public function refresh()
-    {
-        return response()->json(['token' => JWTAuth::refresh()]);
-    }
+    // public function refresh()
+    // {
+    //     return response()->json(['token' => JWTAuth::refresh()]);
+    // }
 
-    public function me()
-    {
-        return response()->json(['user' => Auth::user()]);
-    }
+    // public function me()
+    // {
+    //     return response()->json(['user' => Auth::user()]);
+    // }
 }

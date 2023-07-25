@@ -11,6 +11,7 @@ use App\Http\Controllers\SuperAdminController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
+
 // use Inertia\Inertia;
 
 // Route::get('/register', function () {
@@ -26,39 +27,42 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [ContentController::class, 'welcome'])->name('home');
 
-Route::get('/register', [AuthController::class, 'showRegistrationForm'])->name('register');
-Route::post('/register', [AuthController::class, 'register']);
+
+Route::middleware('web')->group(function () {
+    Route::get('/register', [AuthController::class, 'showRegistrationForm'])->name('register');
+    Route::post('/register', [AuthController::class, 'register']);
+
+    Route::get('/login', [AuthController::class, 'showLoginForm'])->name('login');
+    Route::post('/login', [AuthController::class, 'login']);
+    Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
 
 
-Route::get('/login', [AuthController::class, 'showLoginForm'])->name('login');
-Route::post('/login', [AuthController::class, 'login']);
-Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
+    // User routes
+    Route::middleware(['auth', 'role:user'])->group(function () {
+        // User Dashboard
+        Route::get('/user/dashboard', [UserController::class, 'dashboard'])->name('user.dashboard');
+        // Add more user-specific routes here
+    });
 
+    // Admin routes
+    Route::middleware(['auth', 'role:admin'])->group(function () {
+        // Admin Dashboard
+        Route::get('/admin/dashboard', [AdminController::class, 'dashboard'])->name('admin.dashboard');
+        // Add more admin-specific routes here
+    });
 
-// User routes
-Route::middleware(['auth', 'role:user'])->group(function () {
-    // User Dashboard
-    Route::get('/user/dashboard', [UserController::class, 'dashboard'])->name('user.dashboard');
-    // Add more user-specific routes here
-});
+    // Editor routes
+    Route::middleware(['auth', 'role:editor'])->group(function () {
+        // Editor Dashboard
+        Route::get('/editor/dashboard', [EditorController::class, 'dashboard'])->name('editor.dashboard');
+        // Add more editor-specific routes here
+    });
 
-// Admin routes
-Route::middleware(['auth', 'role:admin'])->group(function () {
-    // Admin Dashboard
-    Route::get('/admin/dashboard', [AdminController::class, 'dashboard'])->name('admin.dashboard');
-    // Add more admin-specific routes here
-});
+    // Superadmin routes
+    Route::middleware(['auth', 'role:superadmin'])->group(function () {
+        // Superadmin Dashboard
+        Route::get('/superadmin/dashboard', [SuperAdminController::class, 'dashboard'])->name('superadmin.dashboard');
+        // Add more superadmin-specific routes here
+    });
 
-// Editor routes
-Route::middleware(['auth', 'role:editor'])->group(function () {
-    // Editor Dashboard
-    Route::get('/editor/dashboard', [EditorController::class, 'dashboard'])->name('editor.dashboard');
-    // Add more editor-specific routes here
-});
-
-// Superadmin routes
-Route::middleware(['auth', 'role:superadmin'])->group(function () {
-    // Superadmin Dashboard
-    Route::get('/superadmin/dashboard', [SuperAdminController::class, 'dashboard'])->name('superadmin.dashboard');
-    // Add more superadmin-specific routes here
 });

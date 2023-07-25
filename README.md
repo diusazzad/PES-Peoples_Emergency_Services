@@ -34,10 +34,14 @@ The idea is to a person's daily work will connected on the same application wher
 ## Lessons 
 
 In summary, you will have three different authentication methods:
-
+Backend
 Cookie-based authentication for regular users. ✔️
 custom Token-based authentication for the superadmin role.❌
 JWT authentication for the admin and editor roles.❌
+Frontend
+Design Welcome page
+Multi Role based Dashboard
+
 
 ## Custom Commands
 php artisan make:command Prime
