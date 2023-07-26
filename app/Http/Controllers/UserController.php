@@ -25,6 +25,6 @@ class UserController extends Controller
         // Assuming you have a 'user.dashboard' view for the user dashboard
         return view('user.dashboard', $data);
     }
-
+    
 
 }

@@ -17,10 +17,6 @@
     <!-- Scripts -->
     @vite('resources/css/app.css')
 
-    <!-- Additional styles -->
-    <style>
-        /* Add any custom styles here */
-    </style>
     @vite('resources/js/app.js')
     {{-- @inertiaHead --}}
 </head>

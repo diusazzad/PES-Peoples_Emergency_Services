@@ -40,7 +40,7 @@ custom Token-based authentication for the superadmin role.❌
 JWT authentication for the admin and editor roles.❌
 Frontend
 Design Welcome page
-Multi Role based Dashboard
+Multi Role based Dashboard Same Template with role based Functionality ✔️
 
 
 ## Custom Commands
