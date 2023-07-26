@@ -50,6 +50,18 @@ class User extends Authenticatable implements JWTSubject
     {
         return $this->role === 'admin';
     }
+    public function superadmin()
+    {
+        return $this->role === 'superadmin';
+    }
+    public function editor()
+    {
+        return $this->role === 'editor';
+    }
+    public function user()
+    {
+        return $this->role === 'user';
+    }
 
 
     public function getJWTIdentifier()

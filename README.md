@@ -39,7 +39,7 @@ Cookie-based authentication for regular users. ✔️
 custom Token-based authentication for the superadmin role.❌
 JWT authentication for the admin and editor roles.❌
 Frontend
-Design Welcome page
+Design Welcome page , Login, Registration and Payment System. ✔️
 Multi Role based Dashboard Same Template with role based Functionality ✔️
 
 

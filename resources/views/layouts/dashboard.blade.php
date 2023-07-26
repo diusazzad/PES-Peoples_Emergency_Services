@@ -35,30 +35,52 @@
             <nav class="p-2">
                 <ul>
                     @auth
-                        @if (auth()->user()->admin())
-                            <li class="mb-2">
-                                <a href="#" class="block py-2 px-4 rounded-lg hover:bg-blue-700">Users</a>
-                            </li>
-                        @else
+                        @if (auth()->user()->superadmin())
                             <li class="mb-2">
                                 <a href="#" class="block py-2 px-4 rounded-lg hover:bg-blue-700">Dashboard</a>
                             </li>
                             <li class="mb-2">
-                                <a href="#" class="block py-2 px-4 rounded-lg hover:bg-blue-700">Products</a>
+                                <a href="#" class="block py-2 px-4 rounded-lg hover:bg-blue-700">Users</a>
                             </li>
+                        @elseif(auth()->user()->admin())
                             <li class="mb-2">
                                 <a href="#" class="block py-2 px-4 rounded-lg hover:bg-blue-700">Settings</a>
                             </li>
+                        @elseif(auth()->user()->editor())
                             <li class="mb-2">
-                                <a href="{{ route('logout') }}" class="block py-2 px-4 rounded-lg hover:bg-blue-700"
-                                    onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
-                                    Log Out
-                                </a>
-                                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                                    @csrf
-                                </form>
+                                <a href="#" class="block py-2 px-4 rounded-lg hover:bg-blue-700">Users</a>
+                            </li>
+                            <li class="mb-2">
+                                <a href="#" class="block py-2 px-4 rounded-lg hover:bg-blue-700">Roles</a>
+                            </li>
+                            <!-- Add more editor-specific links here -->
+                        @elseif(auth()->user()->user())
+                            <li class="mb-2">
+                                <a href="#" class="block py-2 px-4 rounded-lg hover:bg-blue-700">Dashboard</a>
+                            </li>
+                            <li class="mb-2">
+                                <a href="#" class="block py-2 px-4 rounded-lg hover:bg-blue-700">Community</a>
+                            </li>
+                            <li class="mb-2">
+                                <a href="#" class="block py-2 px-4 rounded-lg hover:bg-blue-700">Tasks</a>
+                            </li>
+                            <li class="mb-2">
+                                <a href="#" class="block py-2 px-4 rounded-lg hover:bg-blue-700">Fitness</a>
+                            </li>
+                            <li class="mb-2">
+                                <a href="#" class="block py-2 px-4 rounded-lg hover:bg-blue-700">Payment</a>
                             </li>
                         @endif
+
+                        <li class="mb-2">
+                            <a href="{{ route('logout') }}" class="block py-2 px-4 rounded-lg hover:bg-blue-700"
+                                onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                                Log Out
+                            </a>
+                            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                @csrf
+                            </form>
+                        </li>
                     @endauth
                 </ul>
             </nav>
