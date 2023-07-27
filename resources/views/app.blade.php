@@ -21,6 +21,8 @@
 
         <!-- Include the AboutUs component -->
         <x-welcome.about-us />
+
+        <x-welcome.contact-form/>
     </main>
 
     <footer>
