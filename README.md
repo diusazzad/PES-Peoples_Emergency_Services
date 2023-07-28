@@ -35,29 +35,34 @@ A list of commonly used resources that I find helpful are listed in the acknowle
 
 ## Features
 
-* Cookie-based authentication for regular users:
-* Token-based authentication for superadmin:
-* JWT (JSON Web Token) for admin and editor roles:
-* Api intregration
-* web/android Features
-* Responsive
-* Cross platform
-* Multiple Database with backup
-* Role Based Authentication
-* Community Page
-* Task Management
-* Helpdesk
-
-## Lessons
-
-* In summary, you will have three different authentication methods:
-* Backend
 * Cookie-based authentication for regular users. ✔️
 * custom Token-based authentication for the superadmin role.❌
 * JWT authentication for the admin and editor roles.❌
 * Frontend
 * Design Welcome page , Login, Registration and Payment System. ✔️
 * Multi Role based Dashboard Same Template with role based Functionality ✔️
+* Api intregration
+* web/android Features
+* Responsive  ✔️
+* Cross platform
+* Multiple Database with backup ✔️
+* Role Based Authentication 
+    *  User  ✔️
+            Community Page ✔️
+            Task Management 
+            Helpdesk
+            Fitness
+            Profile
+            Setting
+    *  Superadmin ✔️
+            Role Assign
+    *  Admin ✔️
+            User and Editor Assign
+    *  Editor  ✔️
+            Edit user 
+            Activity
+
+
 
 ## Options
 
