@@ -46,23 +46,20 @@ A list of commonly used resources that I find helpful are listed in the acknowle
 * Responsive  ✔️
 * Cross platform
 * Multiple Database with backup ✔️
-* Role Based Authentication 
-    *  User  ✔️
-            Community Page ✔️
-            Task Management 
-            Helpdesk
-            Fitness
-            Profile
-            Setting
-    *  Superadmin ✔️
-            Role Assign
-    *  Admin ✔️
-            User and Editor Assign
-    *  Editor  ✔️
-            Edit user 
-            Activity
-
-
+* Role Based Authentication
+  * User  ✔️
+    * Community Page ✔️
+    * Task Management
+    * Helpdesk
+    * Fitness
+    * Profile
+    * Setting
+  * Superadmin  ✔️
+    * Assign Roles ✔️
+  * Admin  ✔️
+    * User and Editor Assign ✔️
+  * Editor  ✔️
+    * User Activity ✔️
 
 ## Options
 
@@ -76,6 +73,7 @@ There are four properties for `Placeholder` images that you might want to custom
 ## Built With
 
  [Laravel](https://laravel.com): A powerful PHP framework for building web applications and APIs.
+
 * [Blade](https://laravel.com/docs/blade): Laravel's templating engine for efficient and reusable UI components.
 * [Vue.js](https://vuejs.org): A progressive JavaScript framework for building interactive front-end interfaces.
 * [Flutter](https://flutter.dev): A UI toolkit for developing native mobile applications on iOS and Android.
@@ -121,7 +119,6 @@ If you encounter any issues or have questions, please open an issue on our [GitH
 
 Thank you for choosing [Project Name]. Happy coding!
 
-
 ## Screenshots
 
 ![Homepage](https://github.com/diusazzad/PES-Peoples_Emergency_Services/blob/main/doc/screenshot/1.jpg?raw=true)
@@ -130,10 +127,7 @@ Thank you for choosing [Project Name]. Happy coding!
 
 ![Register](https://github.com/diusazzad/PES-Peoples_Emergency_Services/blob/main/doc/screenshot/register.jpg?raw=true)
 
-
 ![UserDashboard](https://github.com/diusazzad/PES-Peoples_Emergency_Services/blob/main/doc/screenshot/user.jpg?raw=true)
-
-
 
 ## Usage
 
@@ -166,6 +160,3 @@ Contributions are what make the open source community such an amazing place to b
 3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
 4. Push to the Branch (`git push origin feature/AmazingFeature`)
 5. Open a Pull Request
-
-
-
