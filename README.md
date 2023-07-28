@@ -117,6 +117,18 @@ If you encounter any issues or have questions, please open an issue on our [GitH
 Thank you for choosing [Project Name]. Happy coding!
 
 
+## Screenshots
+
+![Homepage](https://github.com/diusazzad/PES-Peoples_Emergency_Services/blob/main/doc/screenshot/1.jpg?raw=true)
+
+![Logiin](https://github.com/diusazzad/PES-Peoples_Emergency_Services/blob/main/doc/screenshot/2.jpg?raw=true)
+
+![Register](https://github.com/diusazzad/PES-Peoples_Emergency_Services/blob/main/doc/screenshot/register.jpg?raw=true)
+
+
+![UserDashboard](https://github.com/diusazzad/PES-Peoples_Emergency_Services/blob/main/doc/screenshot/user.jpg?raw=true)
+
+
 
 ## Usage
 
@@ -151,16 +163,4 @@ Contributions are what make the open source community such an amazing place to b
 5. Open a Pull Request
 
 
-
-
-## Screenshots
-
-![Homepage](https://github.com/diusazzad/PES-Peoples_Emergency_Services/blob/main/doc/screenshot/1.jpg?raw=true)
-
-![Logiin](https://github.com/diusazzad/PES-Peoples_Emergency_Services/blob/main/doc/screenshot/2.jpg?raw=true)
-
-![Register](https://github.com/diusazzad/PES-Peoples_Emergency_Services/blob/main/doc/screenshot/register.jpg?raw=true)
-
-
-![UserDashboard](https://github.com/diusazzad/PES-Peoples_Emergency_Services/blob/main/doc/screenshot/user.jpg?raw=true)
 
