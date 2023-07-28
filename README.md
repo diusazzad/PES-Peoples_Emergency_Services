@@ -142,8 +142,13 @@ Before using [PES], make sure you have [prerequisite software] installed on your
 ```bash
 git clone https://github.com/username/project-name.git
 cd project-name
+composer install
+composer update
 npm install
-npm run build
+npm run build or npx vite --port=4000
+php artisan serve
+php artisan key:generate
+
 
 ## Contributing
 
