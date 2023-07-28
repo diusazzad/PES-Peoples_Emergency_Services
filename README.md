@@ -1,31 +1,7 @@
 <!-- https://readme.shaankhan.dev/#about-the-project -->
 
 
-## Screenshots
 
-![App Screenshot](https://via.placeholder.com/468x300?text=App+Screenshot+Here)
-<br/>
-<p align="center">
-  <a href="https://github.com/diusazzad/PES-Peoples_Emergency_Services">
-    <img src="images/logo.png" alt="Logo" width="80" height="80">
-  </a>
-
-  <h3 align="center">People's Emergency Services - PES</h3>
-
-  <p align="center">
-    An idea that can change your life and time inside a centralized platform.
-    <br/>
-    <br/>
-    <a href="https://github.com/diusazzad/PES-Peoples_Emergency_Services"><strong>Explore the docs »</strong></a>
-    <br/>
-    <br/>
-    <a href="https://github.com/diusazzad/PES-Peoples_Emergency_Services">View Demo</a>
-    .
-    <a href="https://github.com/diusazzad/PES-Peoples_Emergency_Services/issues">Report Bug</a>
-    .
-    <a href="https://github.com/diusazzad/PES-Peoples_Emergency_Services/issues">Request Feature</a>
-  </p>
-</p>
 
 ![Downloads](https://img.shields.io/github/downloads/diusazzad/PES-Peoples_Emergency_Services/total) ![Contributors](https://img.shields.io/github/contributors/diusazzad/PES-Peoples_Emergency_Services?color=dark-green) ![Forks](https://img.shields.io/github/forks/diusazzad/PES-Peoples_Emergency_Services?style=social) ![Stargazers](https://img.shields.io/github/stars/diusazzad/PES-Peoples_Emergency_Services?style=social) ![Issues](https://img.shields.io/github/issues/diusazzad/PES-Peoples_Emergency_Services) ![License](https://img.shields.io/github/license/diusazzad/PES-Peoples_Emergency_Services) 
 
@@ -205,3 +181,30 @@ Distributed under the MIT License. See [LICENSE](https://github.com/diusazzad/PE
 Acknowledgements
 
 * [diusazzad](https://github.com/diusazzad)
+
+
+## Screenshots
+
+![App Screenshot](https://via.placeholder.com/468x300?text=App+Screenshot+Here)
+<br/>
+<p align="center">
+  <a href="https://github.com/diusazzad/PES-Peoples_Emergency_Services">
+    <img src="images/logo.png" alt="Logo" width="80" height="80">
+  </a>
+
+  <h3 align="center">People's Emergency Services - PES</h3>
+
+  <p align="center">
+    An idea that can change your life and time inside a centralized platform.
+    <br/>
+    <br/>
+    <a href="https://github.com/diusazzad/PES-Peoples_Emergency_Services"><strong>Explore the docs »</strong></a>
+    <br/>
+    <br/>
+    <a href="https://github.com/diusazzad/PES-Peoples_Emergency_Services">View Demo</a>
+    .
+    <a href="https://github.com/diusazzad/PES-Peoples_Emergency_Services/issues">Report Bug</a>
+    .
+    <a href="https://github.com/diusazzad/PES-Peoples_Emergency_Services/issues">Request Feature</a>
+  </p>
+</p>

@@ -7,9 +7,9 @@
    <section class="bg-gray-100 px-4 py-16 sm:py-20 md:py-24 lg:py-32 xl:py-40 2xl:py-48">
     <div class="max-w-6xl mx-auto text-center">
         <h2 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl 2xl:text-9xl font-bold mb-8">
-            Features Section
+            Features Intro
         </h2>
-        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-3 2xl:grid-cols-3 lg:grid-cols-4 gap-8">
+        <div class="grid grid-cols-3 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-2  xl:grid-cols-3 2xl:grid-cols-3  gap-8">
             <div class="bg-white p-6 shadow-md rounded-lg">
                 <div class="flex items-center justify-center bg-blue-500 rounded-full h-12 w-12 mb-4">
                     <!-- Replace this with your desired icon or SVG -->
