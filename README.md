@@ -61,14 +61,7 @@ A list of commonly used resources that I find helpful are listed in the acknowle
   * Editor  ✔️
     * User Activity ✔️
 
-## Options
 
-There are four properties for `Placeholder` images that you might want to customize, all of which are exposed to Interface Builder:
-
-* `title` lets you add an optional string to be placed above the size, e.g. “User avatar”.
-* `textColor` lets you adjust the text color used to render the title and size. Defaults to `.white`.
-* `textFontSize` lets you adjust the text font size used to render the title and size. Defaults to `20`.
-* `rounded` rounds the corners of the image view using the minimum of the width and height. This creates lozenges in rectangular views and circles in square views.
 
 ## Built With
 
@@ -135,17 +128,23 @@ Thank you for choosing [Project Name]. Happy coding!
 
 Before using [PES], make sure you have [prerequisite software] installed on your system.
 
-### 2. Basic Setup
 
-1. Clone this repository to your local machine:
+## Deployment
+
+To deploy this project run
 
 ```bash
-git clone https://github.com/username/project-name.git
-cd project-name
+git clone https://github.com/username/pes.git
+cd pes
 composer install
 composer update
+php artisan key:generate 
+php artisan migrate
 npm install
-npm run build or npx vite --port=4000
+npm run build 
+npx vite --port=4000
 php artisan serve
-php artisan key:generate
-go to register page , sign in and login - Have Fun
+localhost:8000
+
+```
+
