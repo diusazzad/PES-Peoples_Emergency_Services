@@ -6,8 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>User Dashboard</title>
 
-    @vite('resources/css/app.css')
 
+    @vite('resources/css/app.css')
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
 </head>
 
 <body class="bg-gray-100">
@@ -56,13 +57,13 @@
                             <!-- Add more editor-specific links here -->
                         @elseif(auth()->user()->user())
                             <li class="mb-2">
-                                <a href="#" class="block py-2 px-4 rounded-lg hover:bg-blue-700">Dashboard</a>
+                                <a href="{{ route('user.dashboard') }}" class="block py-2 px-4 rounded-lg hover:bg-blue-700">Dashboard</a>
                             </li>
                             <li class="mb-2">
                                 <a href="#" class="block py-2 px-4 rounded-lg hover:bg-blue-700">Community</a>
                             </li>
                             <li class="mb-2">
-                                <a href="#" class="block py-2 px-4 rounded-lg hover:bg-blue-700">Tasks</a>
+                                <a href="{{ route('tasks.index') }}" class="block py-2 px-4 rounded-lg hover:bg-blue-700">Tasks</a>
                             </li>
                             <li class="mb-2">
                                 <a href="#" class="block py-2 px-4 rounded-lg hover:bg-blue-700">Fitness</a>

@@ -7,7 +7,9 @@ use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\ContentController;
 use App\Http\Controllers\EditorController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\SslCommerzPaymentController;
 use App\Http\Controllers\SuperAdminController;
+use App\Http\Controllers\TaskController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
@@ -26,7 +28,7 @@ use Illuminate\Support\Facades\Route;
 
 
 Route::get('/', [ContentController::class, 'welcome'])->name('home');
-// SSLCOMMERZ Start
+// // SSLCOMMERZ Start
 Route::get('/example1', [SslCommerzPaymentController::class, 'exampleEasyCheckout']);
 Route::get('/example2', [SslCommerzPaymentController::class, 'exampleHostedCheckout']);
 
@@ -54,14 +56,14 @@ Route::middleware('web')->group(function () {
     Route::middleware(['auth', 'role:user'])->group(function () {
         // User Dashboard
         Route::get('/user/dashboard', [UserController::class, 'dashboard'])->name('user.dashboard');
-        // Add more user-specific routes here
+        Route::resource('/user/tasks', TaskController::class);
     });
 
     // Admin routes
     Route::middleware(['auth', 'role:admin'])->group(function () {
         // Admin Dashboard
         Route::get('/admin/dashboard', [AdminController::class, 'dashboard'])->name('admin.dashboard');
-        // Add more admin-specific routes here
+
     });
 
     // Editor routes

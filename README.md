@@ -49,11 +49,11 @@ A list of commonly used resources that I find helpful are listed in the acknowle
 * Role Based Authentication
   * User  ✔️
     * Community Page ✔️
-    * Task Management
-    * Helpdesk
-    * Fitness
-    * Profile
-    * Setting
+    * Task Management ✔️
+    * Helpdesk ❌
+    * Fitness ❌
+    * Profile ❌
+    * Setting ❌
   * Superadmin  ✔️
     * Assign Roles ✔️
   * Admin  ✔️
@@ -121,6 +121,9 @@ Thank you for choosing [Project Name]. Happy coding!
 ![Register](https://github.com/diusazzad/PES-Peoples_Emergency_Services/blob/main/doc/screenshot/register.jpg?raw=true)
 
 ![UserDashboard](https://github.com/diusazzad/PES-Peoples_Emergency_Services/blob/main/doc/screenshot/user.jpg?raw=true)
+
+
+![UserTask](https://github.com/diusazzad/PES-Peoples_Emergency_Services/blob/main/doc/screenshot/4.jpg?raw=true)
 
 ## Usage
 
