@@ -6,6 +6,7 @@ use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\ContentController;
 use App\Http\Controllers\EditorController;
+use App\Http\Controllers\FitnessController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\SslCommerzPaymentController;
 use App\Http\Controllers\SuperAdminController;
@@ -57,6 +58,7 @@ Route::middleware('web')->group(function () {
         // User Dashboard
         Route::get('/user/dashboard', [UserController::class, 'dashboard'])->name('user.dashboard');
         Route::resource('/user/tasks', TaskController::class);
+        Route::resource('/user/fitness', FitnessController::class);
     });
 
     // Admin routes

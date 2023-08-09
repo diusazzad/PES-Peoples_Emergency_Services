@@ -124,6 +124,8 @@ Thank you for choosing [Project Name]. Happy coding!
 
 ![UserTask](https://github.com/diusazzad/PES-Peoples_Emergency_Services/blob/main/doc/screenshot/3.jpg?raw=true)
 
+![UserFitness](https://github.com/diusazzad/PES-Peoples_Emergency_Services/blob/main/doc/screenshot/4.jpg?raw=true)
+
 ## Usage
 
 ### 1. Installation
