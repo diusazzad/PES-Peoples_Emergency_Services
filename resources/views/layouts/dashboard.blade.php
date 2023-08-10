@@ -63,10 +63,10 @@
                                 <a href="#" class="block px-4 py-2 rounded-lg hover:bg-blue-700">Community</a>
                             </li>
                             <li class="mb-2">
-                                <a href="{{ route('tasks.index') }}" class="block px-4 py-2 rounded-lg hover:bg-blue-700">Tasks</a>
+                                <a href="#" class="block px-4 py-2 rounded-lg hover:bg-blue-700">Tasks</a>
                             </li>
                             <li class="mb-2">
-                                <a href="{{ route('fitness.index') }}" class="block px-4 py-2 rounded-lg hover:bg-blue-700">Fitness</a>
+                                <a href="#" class="block px-4 py-2 rounded-lg hover:bg-blue-700">Fitness</a>
                             </li>
                             <li class="mb-2">
                                 <a href="#" class="block px-4 py-2 rounded-lg hover:bg-blue-700">Prayer List</a>

@@ -33,8 +33,6 @@ class AuthController extends Controller
         return redirect('/'); // Redirect to the home page after successful registration.
     }
 
-
-
     public function showLoginForm()
     {
         return view('auth.login');
@@ -62,7 +60,7 @@ class AuthController extends Controller
                 return redirect()->intended('/'); // Redirect to the intended page after successful login.
             }
         } else {
-            return redirect()->route('login')->with('error', 'Incorrect email or password!');
+            return redirect()->route('login')->withErrors(['email' => 'Invalid email or password.']);
         }
     }
 

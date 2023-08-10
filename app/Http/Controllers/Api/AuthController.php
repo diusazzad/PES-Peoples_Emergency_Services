@@ -24,9 +24,15 @@ class AuthController extends Controller
             'role' => 'required|string|in:superadmin,admin,editor,user',
         ]);
 
+        // if ($validator->fails()) {
+        //     Log::info('Registration failed: Validation errors');
+        //     return response()->json(['error' => $validator->errors()], 422);
+        // }
+
         if ($validator->fails()) {
-            Log::info('Registration failed: Validation errors');
-            return response()->json(['error' => $validator->errors()], 422);
+            return redirect()->route('register')
+                ->withErrors($validator)
+                ->withInput();
         }
 
         $user = User::create([
