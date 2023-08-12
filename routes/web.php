@@ -65,6 +65,18 @@ Route::middleware('web')->group(function () {
     Route::middleware(['auth', 'role:admin'])->group(function () {
         // Admin Dashboard
         Route::get('/admin/dashboard', [AdminController::class, 'dashboard'])->name('admin.dashboard');
+        // Assign Role
+        Route::post('/admin/dashboard/assign-role/{user}', [AdminController::class, 'assignRoleToUser'])
+            ->name('admin.users.assign-role');
+        // Show Users
+        Route::get('/admin/dashboard/role', [AdminController::class, 'roles'])->name('admin.dashboard.roles');
+        // Post
+        Route::get('/admin/dashboard/post', [AdminController::class, 'postDashboard'])->name('admin.post.dashboard');
+        Route::post('/admin/dashboard/upload', [AdminController::class, 'postUpload'])->name('admin.post.upload');
+
+        Route::get('/admin/reviews/{post}/edit', [ContentController::class, 'edit'])->name('admin.reviews.edit');
+        Route::put('/admin/reviews/{post}', [ContentController::class, 'update'])->name('admin.reviews.update');
+        Route::delete('/admin/reviews/{post}', [ContentController::class, 'destroy'])->name('admin.reviews.destroy');
 
     });
 

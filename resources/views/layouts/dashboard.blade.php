@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>User Dashboard</title>
+    <title>Dashboard</title>
 
 
     @vite('resources/css/app.css')
@@ -45,6 +45,14 @@
                             </li>
                         @elseif(auth()->user()->admin())
                             <li class="mb-2">
+                                <a href="{{ route('admin.dashboard.roles') }}"
+                                    class="block px-4 py-2 rounded-lg hover:bg-blue-700">Assign Role</a>
+                            </li>
+                            <li class="mb-2">
+                                <a href="{{ route('admin.post.dashboard') }}"
+                                    class="block px-4 py-2 rounded-lg hover:bg-blue-700">Post</a>
+                            </li>
+                            <li class="mb-2">
                                 <a href="#" class="block px-4 py-2 rounded-lg hover:bg-blue-700">Settings</a>
                             </li>
                         @elseif(auth()->user()->editor())
@@ -57,7 +65,8 @@
                             <!-- Add more editor-specific links here -->
                         @elseif(auth()->user()->user())
                             <li class="mb-2">
-                                <a href="{{ route('user.dashboard') }}" class="block px-4 py-2 rounded-lg hover:bg-blue-700">Dashboard</a>
+                                <a href="{{ route('user.dashboard') }}"
+                                    class="block px-4 py-2 rounded-lg hover:bg-blue-700">Dashboard</a>
                             </li>
                             <li class="mb-2">
                                 <a href="#" class="block px-4 py-2 rounded-lg hover:bg-blue-700">Community</a>
