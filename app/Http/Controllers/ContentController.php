@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Announcement;
 use App\Models\content;
 use App\Models\Post;
 use Illuminate\Http\Request;
@@ -11,8 +12,9 @@ class ContentController extends Controller
 
     public function welcome()
     {
+        $announcements = Announcement::with('user')->orderBy('created_at', 'desc')->get();
         $adminName = 'Admin User'; // Replace this with the actual admin's name
-        return view('app', compact('adminName'));
+        return view('app', compact('adminName'), ['announcements' => $announcements]);
     }
 
     // Store a new review
@@ -61,5 +63,26 @@ class ContentController extends Controller
         return redirect()->route('welcome')->with('success', 'Review deleted successfully.');
     }
 
+
+    //
+    public function createpost()
+    {
+        return view('admin.announcement.create');
+    }
+    public function storepost(Request $request)
+    {
+        $request->validate([
+            'title' => 'required|max:255',
+            'content' => 'required',
+        ]);
+
+        $announcement = new Announcement();
+        $announcement->title = $request->input('title');
+        $announcement->content = $request->input('content');
+        $announcement->user_id = auth()->user()->id;
+        $announcement->save();
+
+        return redirect('/')->with('success', 'Announcement posted successfully.');
+    }
 
 }

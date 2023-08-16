@@ -49,7 +49,7 @@
                                     class="block px-4 py-2 rounded-lg hover:bg-blue-700">Assign Role</a>
                             </li>
                             <li class="mb-2">
-                                <a href="{{ route('admin.post.dashboard') }}"
+                                <a href="{{ route('announcements.create') }}"
                                     class="block px-4 py-2 rounded-lg hover:bg-blue-700">Post</a>
                             </li>
                             <li class="mb-2">

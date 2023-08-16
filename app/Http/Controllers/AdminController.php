@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\content;
 use App\Models\Role;
 use App\Models\User;
 use Illuminate\Http\Request;
@@ -77,4 +78,7 @@ class AdminController extends Controller
         // Assuming you have an 'admin.dashboard' view for the admin dashboard
         return view('admin.dashboard', $data);
     }
+
+
+
 }

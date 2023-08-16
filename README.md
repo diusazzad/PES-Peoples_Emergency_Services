@@ -128,6 +128,8 @@ Thank you for choosing [Project Name]. Happy coding!
 
 ![AdminAssignRoles](https://github.com/diusazzad/PES-Peoples_Emergency_Services/blob/main/doc/screenshot/5.jpg?raw=true)
 
+![AdminCreatePostOnTimeline](https://github.com/diusazzad/PES-Peoples_Emergency_Services/blob/main/doc/screenshot/6.jpg?raw=true)
+
 ## Usage
 
 ### 1. Installation

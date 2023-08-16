@@ -30,6 +30,18 @@
         <x-welcome.footer />
     </footer> --}}
 
+    <div class="announcements bg-gray-100 p-4">
+        <h2 class="text-2xl font-semibold mb-4">Announcements</h2>
+        @foreach ($announcements as $announcement)
+            <div class="bg-white rounded-lg shadow-md p-4 mb-4">
+                <h3 class="text-xl font-semibold">{{ $announcement->title }}</h3>
+                <p class="text-gray-700 mt-2">{{ $announcement->content }}</p>
+                <p class="text-gray-500 mt-2">Posted by: {{ $announcement->user->name }}</p>
+            </div>
+        @endforeach
+    </div>
+
+
     <div class="flex w-full " id="header">
         <ul class="flex justify-center p-3 border place-items-center sm:text-xs sm:w-full gap-x-10 bg-rose-500">
             <li class="flex gap-x-2">
@@ -66,45 +78,70 @@
     <nav class="bg-white border-gray-50 px-2 lg:px-4 py-2.5 dark:bg-gray-100">
         <div class="flex flex-wrap items-center justify-between max-w-screen-xl mx-auto">
             <a href="https://flowbite.com" class="flex items-center">
-                <x-home.logos/>
+                <x-home.logos />
             </a>
             <div class="flex items-center lg:order-2">
-                <a href="{{ route('login') }}" class="text-gray-800 dark:text-white hover:bg-gray-50 focus:ring-4 focus:ring-gray-300 font-medium rounded-lg text-sm px-4 py-2 lg:px-5 lg:py-2.5 mr-2 dark:hover:bg-gray-700 focus:outline-none dark:focus:ring-gray-800">Login</a>
-                <a href="{{ route('register') }}" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 lg:px-5 lg:py-2.5 mr-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">Sign up</a>
-                <button data-collapse-toggle="mega-menu" type="button" class="inline-flex items-center p-2 ml-1 text-sm text-gray-500 rounded-lg lg:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600" aria-controls="mega-menu" aria-expanded="false">
+                <a href="{{ route('login') }}"
+                    class="text-gray-800 dark:text-white hover:bg-gray-50 focus:ring-4 focus:ring-gray-300 font-medium rounded-lg text-sm px-4 py-2 lg:px-5 lg:py-2.5 mr-2 dark:hover:bg-gray-700 focus:outline-none dark:focus:ring-gray-800">Login</a>
+                <a href="{{ route('register') }}"
+                    class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 lg:px-5 lg:py-2.5 mr-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">Sign
+                    up</a>
+                <button data-collapse-toggle="mega-menu" type="button"
+                    class="inline-flex items-center p-2 ml-1 text-sm text-gray-500 rounded-lg lg:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
+                    aria-controls="mega-menu" aria-expanded="false">
                     <span class="sr-only">Open main menu</span>
-                    <svg aria-hidden="true" class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clip-rule="evenodd"></path></svg>
+                    <svg aria-hidden="true" class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd"
+                            d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z"
+                            clip-rule="evenodd"></path>
+                    </svg>
                 </button>
             </div>
             <div id="mega-menu" class="items-center justify-between hidden w-full text-sm lg:flex lg:w-auto lg:order-1">
                 <ul class="flex flex-col mt-4 font-medium lg:flex-row lg:space-x-8 lg:mt-0">
                     <li>
-                        <a href="#" class="block py-2 pl-3 pr-4 text-blue-600 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-blue-600 lg:p-0 dark:text-blue-500 lg:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-blue-500 lg:dark:hover:bg-transparent dark:border-gray-700" aria-current="page">Home</a>
+                        <a href="#"
+                            class="block py-2 pl-3 pr-4 text-blue-600 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-blue-600 lg:p-0 dark:text-blue-500 lg:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-blue-500 lg:dark:hover:bg-transparent dark:border-gray-700"
+                            aria-current="page">Home</a>
                     </li>
                     <li>
-                        <button id="mega-menu-dropdown-button" data-dropdown-toggle="mega-menu-dropdown" class="flex items-center justify-between w-full py-2 pl-3 pr-4 font-medium text-gray-700 border-b border-gray-100 lg:w-auto hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-blue-600 lg:p-0 dark:text-gray-400 lg:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-blue-500 lg:dark:hover:bg-transparent dark:border-gray-700">
-                            Company <svg aria-hidden="true" class="w-5 h-5 ml-1 lg:w-4 lg:h-4" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
+                        <button id="mega-menu-dropdown-button" data-dropdown-toggle="mega-menu-dropdown"
+                            class="flex items-center justify-between w-full py-2 pl-3 pr-4 font-medium text-gray-700 border-b border-gray-100 lg:w-auto hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-blue-600 lg:p-0 dark:text-gray-400 lg:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-blue-500 lg:dark:hover:bg-transparent dark:border-gray-700">
+                            Company <svg aria-hidden="true" class="w-5 h-5 ml-1 lg:w-4 lg:h-4" fill="currentColor"
+                                viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd"
+                                    d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                                    clip-rule="evenodd"></path>
+                            </svg>
                         </button>
-                        <div id="mega-menu-dropdown" class="absolute z-10 grid hidden w-auto grid-cols-2 text-sm bg-white border border-gray-100 rounded-lg shadow-md dark:border-gray-700 lg:grid-cols-3 dark:bg-gray-700" data-popper-placement="bottom" style="position: absolute; inset: 0px auto auto 0px; margin: 0px; transform: translate3d(1147px, 763.5px, 0px);">
+                        <div id="mega-menu-dropdown"
+                            class="absolute z-10 grid hidden w-auto grid-cols-2 text-sm bg-white border border-gray-100 rounded-lg shadow-md dark:border-gray-700 lg:grid-cols-3 dark:bg-gray-700"
+                            data-popper-placement="bottom"
+                            style="position: absolute; inset: 0px auto auto 0px; margin: 0px; transform: translate3d(1147px, 763.5px, 0px);">
                             <div class="p-4 pb-0 text-gray-900 lg:pb-4 dark:text-white">
                                 <ul class="space-y-4">
                                     <li>
-                                        <a href="#" class="text-gray-500 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-500">
+                                        <a href="#"
+                                            class="text-gray-500 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-500">
                                             About Us
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="#" class="text-gray-500 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-500">
+                                        <a href="#"
+                                            class="text-gray-500 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-500">
                                             Library
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="#" class="text-gray-500 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-500">
+                                        <a href="#"
+                                            class="text-gray-500 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-500">
                                             Resources
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="#" class="text-gray-500 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-500">
+                                        <a href="#"
+                                            class="text-gray-500 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-500">
                                             Pro Version
                                         </a>
                                     </li>
@@ -114,10 +151,12 @@
                         </div>
                     </li>
                     <li>
-                        <a href="#" class="block py-2 pl-3 pr-4 text-gray-700 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-blue-600 lg:p-0 dark:text-gray-400 lg:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-blue-500 lg:dark:hover:bg-transparent dark:border-gray-700">Team</a>
+                        <a href="#"
+                            class="block py-2 pl-3 pr-4 text-gray-700 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-blue-600 lg:p-0 dark:text-gray-400 lg:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-blue-500 lg:dark:hover:bg-transparent dark:border-gray-700">Team</a>
                     </li>
                     <li>
-                        <a href="#" class="block py-2 pl-3 pr-4 text-gray-700 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-blue-600 lg:p-0 dark:text-gray-400 lg:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-blue-500 lg:dark:hover:bg-transparent dark:border-gray-700">Contact</a>
+                        <a href="#"
+                            class="block py-2 pl-3 pr-4 text-gray-700 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-blue-600 lg:p-0 dark:text-gray-400 lg:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-blue-500 lg:dark:hover:bg-transparent dark:border-gray-700">Contact</a>
                     </li>
                 </ul>
             </div>
@@ -152,13 +191,15 @@
                 </div>
                 <a href="#" class="mt-4 text-lg font-medium text-gray-800">Technology</a>
             </div>
-            <div class="flex flex-col items-center gap-2 p-5 m-1 bg-white border rounded-lg shadow-lg place-content-center">
+            <div
+                class="flex flex-col items-center gap-2 p-5 m-1 bg-white border rounded-lg shadow-lg place-content-center">
                 <div class="flex items-center justify-center w-12 h-12 text-white bg-purple-500 rounded-full">
                     <i class='bx bxl-graphql'></i>
                 </div>
                 <a href="#" class="mt-4 text-lg font-medium text-gray-800">Language</a>
             </div>
-            <div class="flex flex-col items-center gap-2 p-5 m-1 bg-white border rounded-lg shadow-lg place-content-center">
+            <div
+                class="flex flex-col items-center gap-2 p-5 m-1 bg-white border rounded-lg shadow-lg place-content-center">
                 <div class="flex items-center justify-center w-12 h-12 text-white bg-blue-500 rounded-full">
                     <i class='bx bx-drink'></i>
                 </div>

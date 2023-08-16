@@ -78,6 +78,10 @@ Route::middleware('web')->group(function () {
         Route::put('/admin/reviews/{post}', [ContentController::class, 'update'])->name('admin.reviews.update');
         Route::delete('/admin/reviews/{post}', [ContentController::class, 'destroy'])->name('admin.reviews.destroy');
 
+        // Announcement
+        Route::get('/admin/announcements/create', [ContentController::class, 'createpost'])->name('announcements.create');
+        Route::post('/admin/announcements', [ContentController::class, 'storepost'])->name('announcements');
+
     });
 
     // Editor routes
